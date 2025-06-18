@@ -1,0 +1,464 @@
+<html lang="en" class="dark" style="color-scheme: dark;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/9722456a4ad99fe0.css">
+    <link rel="stylesheet" href="/css/1ea2f29881a16fbe.css">
+    <link rel="stylesheet" href="/css/1db9592e42a35556.css">
+    <link rel="stylesheet" href="/css/f159addd0a886065.css">
+    <link rel="preload" as="script" fetchpriority="low" href="/js/webpack-14bf35b256401fb6.js">
+    <script src="/js/4bd1b696-416dd836c00042af.js" async=""></script>
+    <script src="/js/1684-75289ab381b7ba67.js" async=""></script>
+    <script src="/js/main-app-e1a2c2b2c8b7f71c.js" async=""></script>
+    <script src="/js/4e88bc13-bb7f1c32520feced.js" async=""></script>
+    <script src="/js/ee560e2c-9373baf68a8d8de0.js" async=""></script>
+    <script src="/js/6874-38768b99010aad87.js" async=""></script>
+    <script src="/js/2451-66c3612b96171d71.js" async=""></script>
+    <link rel="icon" href="/images/vaderlogo.svg">
+    <title>VaderAI</title>
+    <meta name="description" content="Next generation AI-powered token launchpad platform">
+    <meta name="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script src="/js/polyfills-42372ed130431b0a.js" nomodule=""></script>
+    <style>
+        @keyframes glitch404 {
+            0% {
+                transform: translate(0);
+                text-shadow: -2px 2px #ff0081, 2px -2px #2de2e6;
+            }
+
+            25% {
+                transform: translate(-2px, 2px);
+                text-shadow: 2px -2px #ff0081, -2px 2px #2de2e6;
+            }
+
+            50% {
+                transform: translate(2px, -2px);
+                text-shadow: -2px 2px #ff0081, 2px -2px #2de2e6;
+            }
+
+            75% {
+                transform: translate(-2px, -2px);
+                text-shadow: 2px 2px #ff0081, -2px -2px #2de2e6;
+            }
+
+            100% {
+                transform: translate(0);
+                text-shadow: -2px 2px #ff0081, 2px -2px #2de2e6;
+            }
+        }
+
+        @keyframes scanline {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0
+            }
+
+            50% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        .scanline {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom,
+                    transparent 0%,
+                    rgba(255, 0, 129, 0.2) 10%,
+                    rgba(45, 226, 230, 0.2) 50%,
+                    transparent 100%);
+            animation: scanline 4s linear infinite;
+        }
+
+        .glitch-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg,
+                    rgba(0, 0, 0, 0.15) 0px,
+                    rgba(0, 0, 0, 0.15) 1px,
+                    transparent 1px,
+                    transparent 2px);
+            pointer-events: none;
+        }
+    </style>
+    <link rel="icon" href="/favicon.ico">
+    <style type="text/css">
+        .rfm-marquee-container {
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            width: var(--width);
+            transform: var(--transform);
+        }
+
+        .rfm-marquee-container:hover div {
+            animation-play-state: var(--pause-on-hover);
+        }
+
+        .rfm-marquee-container:active div {
+            animation-play-state: var(--pause-on-click);
+        }
+
+        .rfm-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .rfm-overlay::before,
+        .rfm-overlay::after {
+            background: linear-gradient(to right, var(--gradient-color), rgba(255, 255, 255, 0));
+            content: "";
+            height: 100%;
+            position: absolute;
+            width: var(--gradient-width);
+            z-index: 2;
+            pointer-events: none;
+            touch-action: none;
+        }
+
+        .rfm-overlay::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+
+        .rfm-overlay::before {
+            left: 0;
+            top: 0;
+        }
+
+        .rfm-marquee {
+            flex: 0 0 auto;
+            min-width: var(--min-width);
+            z-index: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+            animation-play-state: var(--play);
+            animation-delay: var(--delay);
+            animation-direction: var(--direction);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .rfm-initial-child-container {
+            flex: 0 0 auto;
+            display: flex;
+            min-width: auto;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .rfm-child {
+            transform: var(--transform);
+        }
+    </style>
+</head>
+
+<body class="text-white min-h-screen relative overflow-x-hidden">
+    <!-- <script src="/js/webpack-14bf35b256401fb6.js" async=""></script>
+    <script>(self.__next_f = self.__next_f || []).push([0])</script>
+    <script>self.__next_f.push([1, "1:\"$Sreact.fragment\"\n2:\"$Sreact.suspense\"\n3:I[66201,[\"8451\",\"static/chunks/4e88bc13-bb7f1c32520feced.js\",\"844\",\"static/chunks/ee560e2c-9373baf68a8d8de0.js\",\"7892\",\"static/chunks/7892-cb00262858a334d3.js\",\"6129\",\"static/chunks/6129-f7f0dac585f53de3.js\",\"4277\",\"static/chunks/4277-46fdfdc2178f8072.js\",\"4138\",\"static/chunks/4138-7ab3355a777080ac.js\",\"842\",\"static/chunks/842-5083fe5a5f19f4e9.js\",\"4562\",\"static/chunks/4562-f9e84697592963cd.js\",\"6874\",\"static/chunks/6874-38768b99010aad87.js\",\"9543\",\"static/chunks/9543-fe0b2e16bf98a521.js\",\"6766\",\"static/chunks/6766-3bbe7ac35ebc859b.js\",\"2451\",\"static/chunks/2451-66c3612b96171d71.js\",\"7893\",\"static/chunks/7893-293165c45233c009.js\",\"6720\",\"static/chunks/6720-a895f8f1e228ad81.js\",\"6320\",\"static/chunks/6320-df94b9bddb104d8a.js\",\"2803\",\"static/chunks/2803-1931a33bbcf2f9f4.js\",\"7177\",\"static/chunks/app/layout-820c9ef3003e1766.js\"],\"LoadingProvider\"]\n4:I[96354,[\"8451\",\"static/chunks/4e88bc13-bb7f1c32520feced.js\",\"844\",\"static/chunks/ee560e2c-9373baf68a8d8de0.js\",\"7892\",\"static/chunks/7892-cb00262858a334d3.js\",\"6129\",\"static/chunks/6129-f7f0dac585f53de3.js\",\"4277\",\"static/chunks/4277-46fdfdc2178f8072.js\",\"4138\",\"static/chunks/4138-7ab3355a777080ac.js\",\"842\",\"static/chunks/842-5083fe5a5f19f4e9.js\",\"4562\",\"static/chunks/4562-f9e84697592963cd.js\",\"6874\",\"static/chunks/6874-38768b99010aad87.js\",\"9543\",\"static/chunks/9543-fe0b2e16bf98a521.js\",\"6766\",\"static/chunks/6766-3bbe7ac35ebc859b.js\",\"2451\",\"static/chunks/2451-66c3612b96171d71.js\",\"7893\",\"static/chunks/7893-293165c45233c009.js\",\"6720\",\"static/chunks/6720-a895f8f1e228ad81.js\",\"6320\",\"static/chunks/6320-df94b9bddb104d8a.js\",\"2803\",\"static/chunks/2803-1931a33bbcf2f9f4.js\",\"7177\",\"static/chunks/app/layout-820c9ef3003e1766.js\"],\"Providers\"]\n5:I[81515,[\"8451\",\"static/chunks/4e88bc13-bb7f1c32520feced.js\",\"844\",\"static/chunks/ee560e2c-9373baf68a8d8de0.js\",\"7892\",\"static/chunks/7892-cb00262858a334d3.js\",\"6129\",\"static/chunks/6129-f7f0dac585f53de3.js\",\"4277\",\"static/chunks/4277-46fdfdc2178f8072.js\",\"4138\",\"static/chunks/4138-7ab3355a777"])</script>
+    <script>self.__next_f.push([1, "080ac.js\",\"842\",\"static/chunks/842-5083fe5a5f19f4e9.js\",\"4562\",\"static/chunks/4562-f9e84697592963cd.js\",\"6874\",\"static/chunks/6874-38768b99010aad87.js\",\"9543\",\"static/chunks/9543-fe0b2e16bf98a521.js\",\"6766\",\"static/chunks/6766-3bbe7ac35ebc859b.js\",\"2451\",\"static/chunks/2451-66c3612b96171d71.js\",\"7893\",\"static/chunks/7893-293165c45233c009.js\",\"6720\",\"static/chunks/6720-a895f8f1e228ad81.js\",\"6320\",\"static/chunks/6320-df94b9bddb104d8a.js\",\"2803\",\"static/chunks/2803-1931a33bbcf2f9f4.js\",\"7177\",\"static/chunks/app/layout-820c9ef3003e1766.js\"],\"default\"]\n6:I[87555,[],\"\"]\n7:I[31295,[],\"\"]\n8:I[8339,[\"7892\",\"static/chunks/7892-cb00262858a334d3.js\",\"6129\",\"static/chunks/6129-f7f0dac585f53de3.js\",\"4277\",\"static/chunks/4277-46fdfdc2178f8072.js\",\"4345\",\"static/chunks/app/not-found-ca7a1adc4799f5a2.js\"],\"default\"]\n9:I[90894,[],\"ClientPageRoot\"]\na:I[47203,[\"8451\",\"static/chunks/4e88bc13-bb7f1c32520feced.js\",\"4277\",\"static/chunks/4277-46fdfdc2178f8072.js\",\"4138\",\"static/chunks/4138-7ab3355a777080ac.js\",\"842\",\"static/chunks/842-5083fe5a5f19f4e9.js\",\"4562\",\"static/chunks/4562-f9e84697592963cd.js\",\"6874\",\"static/chunks/6874-38768b99010aad87.js\",\"9543\",\"static/chunks/9543-fe0b2e16bf98a521.js\",\"4134\",\"static/chunks/4134-bab579e2058d9fea.js\",\"2451\",\"static/chunks/2451-66c3612b96171d71.js\",\"7893\",\"static/chunks/7893-293165c45233c009.js\",\"6720\",\"static/chunks/6720-a895f8f1e228ad81.js\",\"6320\",\"static/chunks/6320-df94b9bddb104d8a.js\",\"9535\",\"static/chunks/9535-25cb836d8dc4e1b3.js\",\"9759\",\"static/chunks/9759-b68ec427a1978552.js\",\"9911\",\"static/chunks/app/yapping/page-790a4fe8c5b76d72.js\"],\"default\"]\nd:I[59665,[],\"MetadataBoundary\"]\nf:I[59665,[],\"OutletBoundary\"]\n12:I[74911,[],\"AsyncMetadataOutlet\"]\n14:I[59665,[],\"ViewportBoundary\"]\n16:I[26614,[],\"\"]\n:HL[\"/_next/static/css/9722456a4ad99fe0.css\",\"style\"]\n:HL[\"/_next/static/css/1ea2f29881a16fbe.css\",\"style\"]\n:HL[\"/_next/static/css/1db9592e42a35556.css\",\"style\"]\n:HL[\"/_next/static/css/f159addd0a886065.css\",\"style\"]\n"])</script>
+    <script>self.__next_f.push([1, "0:{\"P\":null,\"b\":\"aNcn0ntlCOyH1mA3yT2it\",\"p\":\"\",\"c\":[\"\",\"yapping\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"yapping\",{\"children\":[\"__PAGE__\",{}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/9722456a4ad99fe0.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/1ea2f29881a16fbe.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"link\",\"2\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/1db9592e42a35556.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"link\",\"3\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/f159addd0a886065.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/vaderlogo.svg\"}],[\"$\",\"title\",null,{\"children\":\"VaderAI\"}],[\"$\",\"meta\",null,{\"name\":\"description\",\"content\":\"Next generation AI-powered token launchpad platform\"}],[\"$\",\"meta\",null,{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1.0\"}],[\"$\",\"meta\",null,{\"name\":\"Content-Security-Policy\",\"content\":\"upgrade-insecure-requests\"}]]}],[\"$\",\"body\",null,{\"className\":\"text-white min-h-screen relative overflow-x-hidden\",\"children\":[\"$\",\"$2\",null,{\"fallback\":[\"$\",\"div\",null,{\"className\":\"flex items-center justify-center min-h-screen\",\"children\":[\"$\",\"div\",null,{\"className\":\"w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin\"}]}],\"children\":[\"$\",\"$L3\",null,{\"children\":[\"$\",\"$L4\",null,{\"children\":[\"$\",\"$L5\",null,{\"children\":[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"$L8\",null,{}],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]}]}]}]]}]]}],{\"children\":[\"yapping\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L9\",null,{\"Component\":\"$a\",\"searchParams\":{},\"params\":{},\"promises\":[\"$@b\",\"$@c\"]}],[\"$\",\"$Ld\",null,{\"children\":\"$Le\"}],null,[\"$\",\"$Lf\",null,{\"children\":[\"$L10\",\"$L11\",[\"$\",\"$L12\",null,{\"promise\":\"$@13\"}]]}]]}],{},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"UrdXEBplXvdbd-YbJLOME\",{\"children\":[[\"$\",\"$L14\",null,{\"children\":\"$L15\"}],null]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$16\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script>
+    <script>self.__next_f.push([1, "17:I[74911,[],\"AsyncMetadata\"]\nb:{}\nc:{}\ne:[\"$\",\"$2\",null,{\"fallback\":null,\"children\":[\"$\",\"$L17\",null,{\"promise\":\"$@18\"}]}]\n"])</script>
+    <script>self.__next_f.push([1, "11:null\n"])</script>
+    <script>self.__next_f.push([1, "15:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n10:null\n"])</script>
+    <script>self.__next_f.push([1, "18:{\"metadata\":[[\"$\",\"link\",\"0\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\"}]],\"error\":null,\"digest\":\"$undefined\"}\n13:{\"metadata\":\"$18:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script>
+    <next-route-announcer style="position: absolute;"></next-route-announcer> -->
+    <div class="transition-opacity duration-300 opacity-100">
+        <div data-rk="">
+            <style>
+                [data-rk] {
+                    --rk-blurs-modalOverlay: blur(4px);
+                    --rk-fonts-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                    --rk-radii-actionButton: 9999px;
+                    --rk-radii-connectButton: 12px;
+                    --rk-radii-menuButton: 12px;
+                    --rk-radii-modal: 24px;
+                    --rk-radii-modalMobile: 28px;
+                    --rk-colors-accentColor: #8B5CF6;
+                    --rk-colors-accentColorForeground: white;
+                    --rk-colors-actionButtonBorder: rgba(255, 255, 255, 0.04);
+                    --rk-colors-actionButtonBorderMobile: rgba(255, 255, 255, 0.08);
+                    --rk-colors-actionButtonSecondaryBackground: rgba(255, 255, 255, 0.08);
+                    --rk-colors-closeButton: rgba(224, 232, 255, 0.6);
+                    --rk-colors-closeButtonBackground: rgba(255, 255, 255, 0.08);
+                    --rk-colors-connectButtonBackground: #1A1B1F;
+                    --rk-colors-connectButtonBackgroundError: #FF494A;
+                    --rk-colors-connectButtonInnerBackground: linear-gradient(0deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.15));
+                    --rk-colors-connectButtonText: #FFF;
+                    --rk-colors-connectButtonTextError: #FFF;
+                    --rk-colors-connectionIndicator: #30E000;
+                    --rk-colors-downloadBottomCardBackground: linear-gradient(126deg, rgba(0, 0, 0, 0) 9.49%, rgba(120, 120, 120, 0.2) 71.04%), #1A1B1F;
+                    --rk-colors-downloadTopCardBackground: linear-gradient(126deg, rgba(120, 120, 120, 0.2) 9.49%, rgba(0, 0, 0, 0) 71.04%), #1A1B1F;
+                    --rk-colors-error: #FF494A;
+                    --rk-colors-generalBorder: rgba(255, 255, 255, 0.08);
+                    --rk-colors-generalBorderDim: rgba(255, 255, 255, 0.04);
+                    --rk-colors-menuItemBackground: rgba(224, 232, 255, 0.1);
+                    --rk-colors-modalBackdrop: rgba(0, 0, 0, 0.5);
+                    --rk-colors-modalBackground: #1A1B1F;
+                    --rk-colors-modalBorder: rgba(255, 255, 255, 0.08);
+                    --rk-colors-modalText: #FFF;
+                    --rk-colors-modalTextDim: rgba(224, 232, 255, 0.3);
+                    --rk-colors-modalTextSecondary: rgba(255, 255, 255, 0.6);
+                    --rk-colors-profileAction: rgba(224, 232, 255, 0.1);
+                    --rk-colors-profileActionHover: rgba(224, 232, 255, 0.2);
+                    --rk-colors-profileForeground: rgba(224, 232, 255, 0.05);
+                    --rk-colors-selectedOptionBorder: rgba(224, 232, 255, 0.1);
+                    --rk-colors-standby: #FFD641;
+                    --rk-shadows-connectButton: 0px 4px 12px rgba(0, 0, 0, 0.1);
+                    --rk-shadows-dialog: 0px 8px 32px rgba(0, 0, 0, 0.32);
+                    --rk-shadows-profileDetailsAction: 0px 2px 6px rgba(37, 41, 46, 0.04);
+                    --rk-shadows-selectedOption: 0px 2px 6px rgba(0, 0, 0, 0.24);
+                    --rk-shadows-selectedWallet: 0px 2px 6px rgba(0, 0, 0, 0.24);
+                    --rk-shadows-walletLogo: 0px 2px 16px rgba(0, 0, 0, 0.16);
+                }
+            </style>
+            <script
+                nonce="">((e, t, r, n, s, i, a, o) => { let u = document.documentElement, l = ["light", "dark"]; function c(t) { var r; (Array.isArray(e) ? e : [e]).forEach(e => { let r = "class" === e, n = r && i ? s.map(e => i[e] || e) : s; r ? (u.classList.remove(...n), u.classList.add(i && i[t] ? i[t] : t)) : u.setAttribute(e, t) }), r = t, o && l.includes(r) && (u.style.colorScheme = r) } if (n) c(n); else try { let e = localStorage.getItem(t) || r, n = a && "system" === e ? window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light" : e; c(n) } catch (e) { } })("class", "theme", "dark", null, ["light", "dark"], null, false, true)</script>
+            <div class="flex flex-col min-h-screen bg-transparent relative z-10 overflow-x-hidden">
+                <div class="fixed top-0 left-0 right-0 z-[93]">
+                    <div class="fixed left-0 right-0 z-[95] top-0 transition-all duration-300">
+                        <nav class="w-full border-b border-[#89898924] transition-all duration-300 bg-black/95">
+                            <div class="w-full h-[60px] md:h-[72px]">
+                                <div class="flex items-center justify-between h-full px-4 md:px-6 w-full">
+                                    <div class="flex items-center gap-3 md:gap-4 lg:gap-6"><a
+                                            class="flex items-center gap-2 lg:gap-3 no-underline" href="/"><img
+                                                alt="VaderAI"
+                                                class="w-[32px] h-[32px] md:w-[36px] md:h-[36px] lg:w-[42px] lg:h-[42px]"
+                                                src="/images/MiniLogo.png"><span
+                                                class="text-white font-thin font-mono text-[16px] md:text-[18px] lg:text-[22px]">VaderAI</span></a>
+                                        <div class="hidden sm:flex items-center gap-4 lg:gap-6"><a target="_blank"
+                                                class="hover:no-underline flex items-center justify-center no-underline hover:opacity-80 transition-opacity duration-300"
+                                                href="https://x.com/Vader_AI_"><svg class="w-[24px] h-[24px] text-white"
+                                                    fill="currentColor" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                                                    </path>
+                                                </svg></a><a target="_blank"
+                                                class="hover:no-underline flex items-center justify-center no-underline hover:opacity-80 transition-opacity duration-300"
+                                                href="https://t.me/vader_AI_community/"><img alt="Telegram"
+                                                    class="w-6 h-6" src="/images/TelegramLogo.svg"></a><a
+                                                class="hover:no-underline text-white/80 text-[14px] lg:text-[16px] font-medium no-underline relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:text-white hover:after:w-full"
+                                                href="/yapping.html">Yapping</a></div>
+                                    </div>
+                                    <div class="hidden sm:flex items-center gap-6 lg:gap-12"></div>
+                                    <div class="flex items-center gap-2 lg:gap-3">
+                                        <div class="hidden md:flex items-center gap-2 lg:gap-3">
+                                            <div style=""><a href="/VaderAi.html"><button
+                                                        class="flex items-center justify-center h-[46px] px-6 bg-white rounded-[58px] hover:bg-gray-100 transition-colors"><span
+                                                            class="text-[20px] text-black font-medium">Connect
+                                                            Wallet</span></button></a></div>
+                                        </div><button
+                                            class="flex flex-col justify-center items-center w-10 h-10 md:hidden">
+                                            <div class="space-y-1.5"><span
+                                                    class="block w-6 h-0.5 bg-white transition-transform duration-300"></span><span
+                                                    class="block w-6 h-0.5 bg-white transition-opacity duration-300"></span><span
+                                                    class="block w-6 h-0.5 bg-white transition-transform duration-300"></span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                        <div class="fixed inset-0 z-[94] md:hidden bg-black transition-all duration-300 ease-out opacity-0 invisible pointer-events-none"
+                            aria-hidden="true" style="top: 60px; height: calc(-60px + 100dvh);">
+                            <div
+                                class="flex flex-col h-full transition-transform duration-300 ease-out translate-x-full">
+                                <div class="flex-shrink-0 px-6 py-4 border-b border-white/10">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2"><img alt="VaderAI"
+                                                class="w-[32px] h-[32px]" src="/images/MiniLogo.png"><span
+                                                class="text-white font-thin font-mono text-[16px]">VaderAI</span></div>
+                                    </div>
+                                </div>
+                                <div class="flex-1 overflow-y-auto">
+                                    <div class="px-6 py-4 space-y-6"><a
+                                            class="no-underline hover:no-underline block text-lg font-medium text-white/90 hover:text-white transition-colors duration-300"
+                                            href="/yapping.html">Yapping</a>
+                                        <div class="space-y-4">
+                                            <div class="text-lg font-medium text-white/90">Social</div>
+                                            <div class="space-y-3 pl-4"><a
+                                                    class="block p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200"
+                                                    href="https://x.com/Vader_AI_">
+                                                    <div class="flex items-center gap-3"><svg
+                                                            class="w-[24px] h-[24px] text-white" fill="currentColor"
+                                                            viewBox="0 0 24 24">
+                                                            <path
+                                                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                                                            </path>
+                                                        </svg>
+                                                        <div class="text-white font-medium">Twitter</div>
+                                                    </div>
+                                                </a><a
+                                                    class="block p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200"
+                                                    href="https://t.me/vader_AI_community/">
+                                                    <div class="flex items-center gap-3"><img alt="Telegram"
+                                                            class="w-6 h-6" src="/images/TelegramLogo.svg">
+                                                        <div class="text-white font-medium">Telegram</div>
+                                                    </div>
+                                                </a></div>
+                                        </div>
+                                    </div>
+                                    <div class="h-32"></div>
+                                </div>
+                                <div
+                                    class="sticky bottom-0 left-0 right-0 px-6 py-4 border-t border-white/10 space-y-3 bg-black">
+                                    <div style=""><a href="/VaderAi.html"><button
+                                                class="flex items-center justify-center h-[46px] px-6 bg-white rounded-[58px] hover:bg-gray-100 transition-colors"><span
+                                                    class="text-[20px] text-black font-medium">Connect
+                                                    Wallet</span></button></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <main class="flex-1 w-full max-w-[100vw] overflow-x-hidden transition-all duration-500">
+                    <main
+                        class="flex items-center justify-center pt-20 pb-10 px-4 md:pt-24 md:pb-16 lg:pt-28 lg:pb-20 min-h-screen">
+                        <div class="w-full flex justify-center items-center">
+                            <div class="relative w-full max-w-2xl mx-4 sm:mx-6 lg:mx-8">
+                                <div
+                                    class="relative rounded-[8px] border border-[#343434] backdrop-blur-[16px] shadow-2xl p-0 overflow-visible">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-b from-[#232323] to-black opacity-20 rounded-[8px]">
+                                    </div>
+                                    <div class="pt-8 pb-4 relative z-10 text-center">
+                                        <h1 class="text-3xl font-extrabold text-white tracking-tight drop-shadow-lg">
+                                            VADER Yapping</h1>
+                                        <div
+                                            class="mt-8 mx-auto w-24 h-[2px] bg-gradient-to-r from-white/0 via-white/60 to-white/0 rounded-full opacity-80">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col gap-10 px-8 pb-10 relative z-10">
+                                        <div class="flex flex-col gap-4 items-start"><label
+                                                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-white text-lg mb-1">Wallet</label>
+                                            <div class="flex flex-col gap-2 w-full items-start">
+                                                <div style=""><button
+                                                        class="flex items-center justify-center h-[46px] px-6 bg-white rounded-[58px] hover:bg-gray-100 transition-colors"><span
+                                                            class="text-[20px] text-black font-medium">Connect
+                                                            Wallet</span></button></div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col gap-4 items-start"><label
+                                                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-white text-lg mb-1">X
+                                                (Twitter)</label>
+                                            <div class="flex flex-col gap-2 w-full items-start"><button
+                                                    class="bg-black hover:bg-[#232323] text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg transition-all duration-200 flex items-center justify-center  border border-[#343434] bg-[#181818] hover:bg-[#232323] text-white rounded-[8px] px-6 py-3 font-semibold text-base transition-all duration-200 shadow-sm"><svg
+                                                        class="inline-block mr-3 w-7 h-7 align-middle"
+                                                        viewBox="0 0 24 24" fill="currentColor"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                                                        </path>
+                                                    </svg>Sign in with X</button></div>
+                                        </div>
+                                        <div
+                                            class="border-2 border-dashed border-gray-400 rounded-lg p-4 bg-transparent mt-2 mb-2">
+                                            <div
+                                                class="text-gray-200 text-base sm:text-lg leading-relaxed font-medium text-center">
+                                                <strong>VADER Yapping Eligibility:</strong> You must stake a minimum of
+                                                10k $VADER for 360 days to become eligible for VADER Yapping and to earn
+                                                rewards.
+                                            </div>
+                                            <p
+                                                class="text-gray-300 text-base sm:text-base mt-2 italic leading-relaxed font-medium text-center">
+                                                For more information please visit <a
+                                                    href="https://t.me/vader_AI_community" target="_blank"
+                                                    class="text-blue-500 hover:text-blue-600">here.</a></p>
+                                        </div>
+                                        <div class="relative inline-block w-full"><button
+                                                class="inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-pink-500 disabled:pointer-events-none h-9 px-4 w-full mt-4 text-lg font-bold rounded-xl bg-white text-black hover:bg-gray-200 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed py-4"
+                                                disabled="">Join VADER Yapping</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </main>
+                <footer class="w-full text-white py-6 mt-2 border-t border-[#89898924]">
+                    <div class="container mx-auto px-4">
+                        <div
+                            class="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-4 lg:gap-8 text-sm">
+                            <div
+                                class="flex flex-wrap items-center gap-2 lg:gap-3 text-[#D8D8D8] justify-center lg:justify-start">
+                                <a class="flex items-center hover:opacity-80 transition-opacity"
+                                    aria-label="Go to homepage" href="/"><img alt="VaderAI" width="24" height="24"
+                                        class="mr-2" src="/images/MiniLogo.png"><span
+                                        class="text-[16px] font-thin font-mono text-white">VaderAI</span></a><span
+                                    class="text-gray-500">|</span><span class="whitespace-nowrap">© 2025 vaderai.ai All
+                                    Rights Reserved.</span><span class="text-gray-500">|</span><a
+                                    class="hover:text-white transition-colors whitespace-nowrap" href="/terms">Terms
+                                    &amp; Conditions</a><span class="text-gray-500">|</span><a
+                                    class="hover:text-white transition-colors whitespace-nowrap" href="/privacy">Privacy
+                                    Policy</a>
+                            </div>
+                            <div
+                                class="flex flex-wrap items-center gap-2 lg:gap-3 text-[#D8D8D8] justify-center lg:justify-end">
+                                <a target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors"
+                                    href="https://vaderai.gitbook.io/litepaper">Litepaper</a><span
+                                    class="text-gray-500">|</span><a target="_blank" rel="noopener noreferrer"
+                                    class="flex items-center hover:text-white transition-colors" title="Telegram"
+                                    href="https://t.me/vader_AI_community/"><img alt="Telegram" width="16" height="16"
+                                        src="/TelegramLogo.svg"></a><span class="text-gray-500">|</span><a
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="flex items-center hover:text-white transition-colors" title="X (Twitter)"
+                                    href="https://x.com/Vader_AI_"><svg viewBox="0 0 24 24" class="w-4 h-4"
+                                        fill="currentColor" aria-hidden="true">
+                                        <path
+                                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                                        </path>
+                                    </svg></a><span class="text-gray-500">|</span><a target="_blank"
+                                    rel="noopener noreferrer" class="hover:text-white transition-colors"
+                                    href="https://www.gate.io/trade/VADER_USDT">Gate</a><span
+                                    class="text-gray-500">|</span><a target="_blank" rel="noopener noreferrer"
+                                    class="flex items-center hover:text-white transition-colors" title="CoinGecko"
+                                    href="https://www.coingecko.com/en/coins/vaderai-by-virtuals"><img alt="CoinGecko"
+                                        width="24" height="24" src="/images/coingecko-logo.svg"></a><span
+                                    class="text-gray-500">|</span><button
+                                    class="flex items-center gap-1.5 px-2 py-1 border border-[#343434] hover:border-[#454545] rounded transition-all hover:bg-[#343434]/20"
+                                    title="Copy contract address"><span class="whitespace-nowrap text-xs">$VADER
+                                        0x731...4870</span><svg stroke="currentColor" fill="none" stroke-width="2"
+                                        viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+                                        class="w-2.5 h-2.5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
